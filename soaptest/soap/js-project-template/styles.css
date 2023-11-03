@@ -1,0 +1,446 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Noto Sans', sans-serif;  /*from Google fonts*/
+    background-color: white;
+}
+
+/*--------------------------------NAVIGATION---------------------------------------*/
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    height: 100vh;
+}
+ul {
+    display: flex;
+    list-style: none;  /*hides check box*/
+    flex: 1;
+}
+nav {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 231, 170);
+    box-shadow: 7px 12px 0px -2px rgb(143, 89, 227);
+    border-radius: 60px;
+    padding: 5px 15px;
+    height: 15vh;
+    position: fixed;    /*sticks the navigation bar at the top as user scrolls*/
+    z-index: 2;         /*nav bar overlays other elements as user scrolls*/
+}
+nav li {
+    padding: 0px 30px;
+}
+nav li a {
+    font-size: 1vw;
+    text-decoration: none;    
+    color: black;
+    transition: 0.3s;
+}
+li a:hover {
+    font-weight: 600;
+    color: rgb(242, 114, 173);
+}
+#burger, label {                    
+    display: none;   /*hides hamburger menu icon*/
+}
+/*--------------------------------HOME SECTION---------------------------------------*/
+.logo-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.logo-text {
+    width: 90%;
+}
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top:66%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+h1 {
+    font-weight: 600;
+    font-size: 2vw;
+    color: rgb(242, 114, 173);
+    margin: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);  /*---clip path to hide text for the animation---*/
+    line-height: 2rem;
+}
+.char {
+    transform: translateY(115px); /*---gsap text animation---*/
+    transition: transform .4s;
+}
+sl-button.home-cta::part(base) {    /*----shoelace button----*/
+    background-color: rgb(143, 89, 227);
+    color: white;
+}
+.fa-solid {            /*-----fontawesome icon styling-------*/
+    margin-left: 7px;
+}
+.home-cta a {
+    text-decoration: none;
+    color: white;
+}
+/*--------------------------------ABOUT SECTION---------------------------------------*/
+#About {
+    background-color: white;
+    margin-bottom: 60px;
+}
+.about-titles {
+    padding: 6px 40px;
+    margin-bottom: 30px;
+}
+.about-titles p {
+    text-align: center;
+}
+h2 {
+    font-size: 3vw;
+    font-weight: 700;
+    text-align: center;
+}
+.company-values {
+    display: flex;
+    justify-content: center;
+}
+.company-values p {
+    font-weight: 700;
+    margin: 10px 0px;
+}
+/*--------------------------------(shoelace dialog)---------------------------------------*/
+.company-values button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+sl-button.close-button::part(base) {         /*shoelace button styling*/
+    background-color: rgb(143, 89, 227);
+    color: white;
+}
+.value-natural {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+}
+.value-crueltyfree, .value-eco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 50px;
+}
+/*--------------------------------(hover effects on svg buttons)---------------------------------------*/
+.natural:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0px 0px 0px 8px rgb(143, 89, 227);
+    border-radius: 100px;
+}
+.cruelty:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0px 0px 0px 8px rgb(143, 89, 227);
+    border-radius: 100px;
+}
+.eco:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    box-shadow: 0px 0px 0px 8px rgb(143, 89, 227);
+    border-radius: 100px;
+}
+/*--------------------------------PRODUCTS SECTION---------------------------------------*/
+#Products {
+    background-color: white;
+}
+.products-bath h2 {
+    text-align: left;
+    margin: 10px 51px;
+}
+/*--------------------------------(bath bombs-shoelace image carousel)---------------------------------------*/
+.bath-carousel {
+    margin-bottom: 20px;
+}
+.bath1, .bath4 {               /*add colourful borders to images to fit the aesthetic*/
+    box-shadow: 7px 10px 0px 1px rgb(143, 89, 227);
+    border-radius: 30px;
+}
+.bath2, .bath5 {
+    box-shadow: 7px 10px 0px 1px rgb(58, 167, 230);
+    border-radius: 30px;
+}
+.bath3, .bath6 {
+    box-shadow: 7px 10px 0px 1px rgb(242, 114, 173);
+    border-radius: 30px;
+}
+.bath-carousel::part(pagination) {     /*some shoelace styling to make the images fit nicely in the container*/
+    padding: 5px;
+}
+.bath-carousel::part(scroll-container) {
+    padding: 10px 8px;
+}
+/*--------------------------------(candles)---------------------------------------*/
+.products-candles h2 {
+    text-align: left;
+    margin-left: 51px;
+}
+.products-candles p, .cta {
+    text-align: left;
+    margin: 0px 51px;
+}
+.cta {
+    margin-top: 20px;
+}
+sl-button.cta::part(base) {     /*---shoelace button styling---*/
+    background-color: rgb(242, 114, 173);
+    color: white;
+}
+#Candles {
+    display: flex;
+    overflow: hidden;
+}
+.products-candles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    background-color: #BAE859;
+    padding-top: 22px;
+    width: 50%;
+    height: 100vh;
+}
+.candles-2 {
+    background-color: rgb(242, 114, 173);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 12%;
+}
+.candles-2 img {
+    width: 30%;
+    box-shadow: 7px 10px 0px 1px rgb(255, 231, 170);
+    border-radius: 30px;
+}
+
+/*--------------------------------INGREDIENTS SECTION---------------------------------------*/
+#Ingredients {
+    padding-top: 30px;
+}
+/*--------------------------------(svg [gsap] animation)---------------------------------------*/
+.ingr-graphic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2%;
+}
+.bowl-cont svg {
+    width: 70%;
+    display:block;
+    margin: auto;
+}
+.bowl-cont {
+    margin: 1%;
+}
+.bowl-cont p {
+    font-size: 1.5vw;
+    margin-top: 5%;
+}
+.toppings {
+    width: 250px;
+    height: 40vh;
+    position: relative;
+}
+.tp-1 {                  /*----positioning individual svg---*/
+    position: absolute;
+    left: 50%;
+    top: 80%;
+}
+.tp-2 {
+    position: absolute;
+    right: 70%;
+    top: 60%;
+}
+.tp-3 {
+    position: absolute;
+    left: 80%;
+    top: 40%;
+}
+.tp-4 {
+    position: absolute;
+    right:40%;
+    top: 20%;
+}
+.tp-5 {
+    position: absolute;
+    right: 60%;
+    bottom: 100%;
+}
+.scents-graphic {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+    padding-bottom: 12%;
+}
+.scents-graphic p {
+    font-size: 1.5vw;
+    margin-right: 10%;
+}
+.scents-graphic span {
+    font-size: 1vw;
+}
+.scents {
+    position: relative;
+}
+.scents img {
+    right: 60%;
+}
+.milk {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+}
+.flower {
+    position: absolute;
+    top: -20%;
+    left: 40%;
+}
+.lemon {
+    position: absolute;
+    top: 7%;
+    left: -10%;
+}
+.berry {
+    position: absolute;
+    top: 55%;
+    left: -20%;
+}
+.lavender {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+}
+.soap {
+   position: relative;
+   left: 2%;
+}
+
+/*--------------------------------FOOTER / CONTACT---------------------------------------*/
+.footer-cont {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(58, 167, 230);
+    padding: 6% 0% 10% 0%;
+}
+.footer-cont h2 {
+    font-size: 1.7vw;
+    margin-bottom: 5%;
+}
+.explore {
+    display: flex;
+    flex-direction: column;
+}
+.explore a {
+    text-decoration: none;
+    color:black;
+    margin-top: 3%;
+    transition:0.3s; 
+}
+.explore a:hover {
+    color: rgb(255, 231, 170);
+    text-decoration: underline;
+}
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    margin: 0% 22%;
+    margin-right: 20%;
+}
+.email-btn {
+    margin: 5% 40%;
+}
+sl-button.email-btn::part(base) {          /*---shoelace button styling---*/
+    background-color: rgb(242, 114, 173);
+    color: white;
+}
+.follow {
+    display: flex;
+    flex-direction: column;
+}
+.follow a {
+    text-decoration: none;
+    color:black;
+    margin-top: 3%;
+    transition:0.3s; 
+}
+.follow a:hover {
+    color: rgb(255, 231, 170);
+    text-decoration: underline;
+}
+
+/*--------------------------------(MEDIA QUERY - mobile [768px])---------------------------------------*/
+@media screen and (max-width: 768px) {
+    /*---NAVIGATION BAR---*/
+    nav li a {
+        font-size: 2vw;
+    }
+
+    /*---INGREDIENTS SECTION---*/
+    .bowl-cont svg {
+        width: 50%;
+    }
+    .toppings img{
+        width: 15%;
+    }
+    .bowl-cont p {
+        font-size: 2vw;
+        margin-top: 1%;
+        text-align: center;
+    }
+    .soap {
+        left: 12%;
+     }
+    .scents-graphic p {
+        font-size: 2vw;
+        margin-left: 5%;
+        margin-right: -20%;
+        z-index: 1;
+    }
+    .scents-graphic span {
+        font-size: 1.5vw;
+    }
+
+    /*---FOOTER---*/
+    .footer-cont {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .footer-cont h2 {
+        font-size: 1.9vw;
+        text-align: left;
+    }
+    .explore a, .follow a {
+        font-size: 1.5vw;
+    }
+    .newsletter {
+        display: flex;
+        justify-content: center;
+    }
+    .email-btn {
+        margin-top: 5%;
+        margin-left: 30%;
+        width: 40%;
+    }
+    
+}
